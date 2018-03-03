@@ -32,3 +32,7 @@ wget https://raw.githubusercontent.com/lazyzero/MediaPlayerPiInit/master/init.sh
 chmod +x init.sh
 ./init.sh
 ```
+
+Change the hostname by editing the `/etc/hostname`.
+
+Change the password of the user `pi` with `passwd`.
