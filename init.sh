@@ -1,8 +1,8 @@
 #!/bin/sh
 #update packages and install missing
 sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get install midori matchbox-window-manager xserver-xorg x11-xserver-utils unclutter xinit git omxplayer
+sudo apt-get -y dist-upgrade
+sudo apt-get -y ainstall midori matchbox-window-manager xserver-xorg x11-xserver-utils unclutter xinit git omxplayer
 
 #install nodejs
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
@@ -23,3 +23,6 @@ echo '
 if [ -z "${SSH_TTY}" ]; then
   xinit ~/MediaPlayerPi/run.sh
 fi'  >> /home/pi/.bashrc
+
+sudo wget https://raw.githubusercontent.com/lazyzero/MediaPlayerPiInit/master/autologin.conf -O /etc/systemd/system/getty@tty1.service.d/autologin.conf
+sudo systemctl enable getty@tty1.service

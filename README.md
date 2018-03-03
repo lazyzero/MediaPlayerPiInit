@@ -25,3 +25,10 @@ After booting the Raspberry Pi you should be able to access it by SSH.
 ssh pi@raspberry.local
 ```
 ## Configure Raspberry Pi and install dependencies.
+
+When you login by ssh you can download the init script.
+```
+wget https://raw.githubusercontent.com/lazyzero/MediaPlayerPiInit/master/init.sh
+chmod +x init.sh
+./init.sh
+```
