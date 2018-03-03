@@ -10,7 +10,7 @@ sudo apt-get install -y nodejs
 
 #install MediaPlayerPi
 cd /home/pi
-git clone git@github.com:lazyzero/MediaPlayerPi.git
+git clone https://github.com/lazyzero/MediaPlayerPi.git
 cd /home/pi/MediaPlayerPi
 npm install
 
@@ -26,3 +26,6 @@ fi'  >> /home/pi/.bashrc
 
 sudo wget https://raw.githubusercontent.com/lazyzero/MediaPlayerPiInit/master/autologin.conf -O /etc/systemd/system/getty@tty1.service.d/autologin.conf
 sudo systemctl enable getty@tty1.service
+
+#change hostname
+echo 'mediaplayerpi'|sudo tee /etc/hostname
