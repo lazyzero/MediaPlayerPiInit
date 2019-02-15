@@ -8,6 +8,9 @@ sudo apt-get -y install midori matchbox-window-manager xserver-xorg x11-xserver-
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
+#install node-red
+sudo npm install -g --unsafe-perm node-red
+
 #install MediaPlayerPi
 cd /home/pi
 git clone https://github.com/lazyzero/MediaPlayerPi.git
@@ -21,6 +24,7 @@ sudo sed -i '/^exit 0/c\chmod g+rw /dev/tty?\nexit 0' /etc/rc.local
 #only local login starts the run script. Not ssh login
 echo '
 if [ -z "${SSH_TTY}" ]; then
+  node-red &
   xinit ~/MediaPlayerPi/run.sh
 fi'  >> /home/pi/.bashrc
 
@@ -28,4 +32,4 @@ sudo wget https://raw.githubusercontent.com/lazyzero/MediaPlayerPiInit/master/au
 sudo systemctl enable getty@tty1.service
 
 #change hostname
-echo 'mediaplayerpi'|sudo tee /etc/hostname
+#echo 'mediaplayerpi'|sudo tee /etc/hostname
