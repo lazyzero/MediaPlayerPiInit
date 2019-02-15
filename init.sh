@@ -2,10 +2,10 @@
 #update packages and install missing
 sudo apt-get update
 sudo apt-get -y dist-upgrade
-sudo apt-get -y ainstall midori matchbox-window-manager xserver-xorg x11-xserver-utils unclutter xinit git omxplayer
+sudo apt-get -y install midori matchbox-window-manager xserver-xorg x11-xserver-utils unclutter xinit git omxplayer
 
 #install nodejs
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 #install MediaPlayerPi
